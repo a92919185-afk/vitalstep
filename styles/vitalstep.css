@@ -1,0 +1,532 @@
+@import url('theme.css');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ============================================================
+   THEME:       Vital Step
+   NICHE:       Weight Loss / Medical Weight Management (GLP-1)
+   COUNTRY:     United States (us)
+   SOURCE URL:  https://try.vitalstep.com/
+   DNA REPORT:  2026-04-06
+   THEME TYPE:  Mixed (dark hero, light sections)
+   DESIGN DIR:  Medical authority meets natural vitality
+   ============================================================ */
+
+/* LAYER 1: COLOR TOKENS */
+:root {
+  --primary:       #0d9488;
+  --primary-dark:  #0f766e;
+  --primary-light: #5eead4;
+  --secondary:     #f59e0b;
+  --bg:            #ffffff;
+  --bg-alt:        #f0fdfa;
+  --dark:          #0f172a;
+  --dark-card:     #1e293b;
+  --text:          #1e293b;
+  --text-muted:    #64748b;
+  --text-on-dark:  #f8fafc;
+  --cta-bg:        #f59e0b;
+  --cta-text:      #0f172a;
+  --cta-hover:     #d97706;
+  --alert-bg:      #0f172a;
+  --alert-accent:  #f59e0b;
+  --trust-bg:      #f0fdfa;
+  --border:        #cbd5e1;
+  --border-light:  #e2e8f0;
+  --star:          #f59e0b;
+  --cta-pulse-color: 245, 158, 11;
+}
+
+/* LAYER 2: TYPOGRAPHY */
+:root {
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-label,
+.btn-primary,
+.nav-link,
+.stat-number {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-label {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* LAYER 3: COMPONENT SHAPE */
+:root {
+  --radius-btn:  50px;
+  --radius-card: 16px;
+  --radius-sm:   8px;
+}
+
+/* LAYER 4: HERO (Dark Theme) */
+#hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(13, 148, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 148, 136, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#hero .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  background: rgba(13, 148, 136, 0.15);
+  border: 1px solid rgba(13, 148, 136, 0.4);
+  color: var(--primary-light);
+  backdrop-filter: blur(8px);
+}
+
+.hero-badge i {
+  color: var(--primary-light);
+}
+
+#hero h1 {
+  color: var(--text-on-dark);
+}
+
+#hero h1 .highlight {
+  color: var(--primary-light);
+  background: linear-gradient(135deg, var(--primary-light) 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtext {
+  color: rgba(248, 250, 252, 0.85);
+}
+
+.hero-tagline {
+  color: rgba(248, 250, 252, 0.7);
+}
+
+.hero-tagline i {
+  color: var(--primary-light);
+}
+
+.hero-guarantee {
+  color: rgba(248, 250, 252, 0.6);
+}
+
+.hero-guarantee i {
+  color: var(--primary-light);
+}
+
+.hero-product-img {
+  filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.5))
+          drop-shadow(0 0 80px rgba(13, 148, 136, 0.3));
+}
+
+/* LAYER 5: ALERT BAR */
+#announcement-bar {
+  background: var(--alert-bg);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.alert-badge {
+  color: rgba(248, 250, 252, 0.9);
+  font-weight: 500;
+}
+
+.alert-badge i {
+  color: var(--alert-accent);
+}
+
+/* LAYER 6: CTA BUTTON */
+.btn-primary {
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border-radius: var(--radius-btn);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding: 1rem 2.5rem;
+}
+
+.btn-primary:hover {
+  background: var(--cta-hover);
+  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border-radius: var(--radius-btn);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* LAYER 7: NAVBAR */
+#header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  color: var(--text-on-dark);
+  font-weight: 800;
+}
+
+.nav-link {
+  color: rgba(248, 250, 252, 0.8);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary-light);
+}
+
+/* LAYER 8: TRUST BADGES */
+#trust {
+  background: var(--trust-bg);
+}
+
+.trust-badge {
+  transition: transform 0.25s ease;
+}
+
+.trust-badge:hover {
+  transform: translateY(-3px);
+}
+
+.trust-icon {
+  background: rgba(13, 148, 136, 0.1);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.trust-badge:hover .trust-icon {
+  background: var(--primary);
+  transform: scale(1.1);
+}
+
+.trust-badge:hover .trust-icon i {
+  color: #fff;
+}
+
+.trust-icon i {
+  color: var(--primary);
+}
+
+/* LAYER 9: SOCIAL PROOF */
+#social-proof {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#social-proof::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.stat-number {
+  color: #fff;
+  font-weight: 800;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* LAYER 10: FEATURE CARDS */
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--primary);
+  transition: height 0.35s ease;
+}
+
+.feature-card:hover::before {
+  height: 100%;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 30px rgba(13, 148, 136, 0.12);
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary);
+}
+
+/* LAYER 11: REVIEWS */
+.review-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  position: relative;
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Review avatars - circular and smaller */
+.review-author img {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+
+.review-stars {
+  color: var(--star);
+}
+
+/* LAYER 12: FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--border-light);
+  transition: padding-left 0.2s ease;
+}
+
+.faq-item.open {
+  padding-left: 12px;
+  border-left: 3px solid var(--primary);
+}
+
+.faq-item.open .faq-question {
+  color: var(--primary);
+}
+
+.faq-question {
+  font-weight: 600;
+}
+
+/* LAYER 13: CTA SECTION */
+#cta {
+  background: linear-gradient(135deg, var(--bg-alt) 0%, #fff 100%);
+}
+
+/* LAYER 14: MOTION ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--cta-pulse-color), 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(var(--cta-pulse-color), 0); }
+}
+
+@keyframes alertPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+/* Apply animations */
+.hero-badge     { animation: heroFade 0.6s 0.1s ease both; }
+.hero-text h1   { animation: heroFade 0.6s 0.25s ease both; }
+.hero-subtext   { animation: heroFade 0.6s 0.4s ease both; }
+.hero-tagline   { animation: heroFade 0.6s 0.5s ease both; }
+.hero-cta-group { animation: heroFade 0.6s 0.65s ease both; }
+.hero-guarantee { animation: heroFade 0.6s 0.75s ease both; }
+.hero-img-col   { animation: heroFade 0.8s 0.3s ease both; }
+
+/* CTA pulse on primary button */
+.hero-cta-group .btn-primary {
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+/* Alert badge pulse */
+.alert-badge:first-child {
+  animation: alertPulse 2s ease-in-out infinite;
+}
+
+/* Stagger feature cards */
+.feature-card:nth-child(1) { animation: fadeUp 0.6s 0.0s ease both; }
+.feature-card:nth-child(2) { animation: fadeUp 0.6s 0.1s ease both; }
+.feature-card:nth-child(3) { animation: fadeUp 0.6s 0.2s ease both; }
+.feature-card:nth-child(4) { animation: fadeUp 0.6s 0.1s ease both; }
+.feature-card:nth-child(5) { animation: fadeUp 0.6s 0.2s ease both; }
+.feature-card:nth-child(6) { animation: fadeUp 0.6s 0.3s ease both; }
+
+/* LAYER 15: MOTION SAFETY & ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.btn-primary,
+.hero-cta,
+.cta-button {
+  touch-action: manipulation;
+}
+
+.modal-drawer {
+  overscroll-behavior: contain;
+}
+
+/* LAYER 16: CONTRAST SAFETY CHECK */
+/* Navbar text on navbar bg: ✓ 4.5:1+ */
+/* CTA text on cta-bg: ✓ 7:1+ (dark on amber) */
+/* Body text on bg: ✓ 11:1+ (slate-800 on white) */
+/* Hero text on hero gradient: ✓ 4.5:1+ */
+/* Modal text: unchanged (dark on white) */
+
+/* IMAGE ROUNDING */
+.hero-product-img,
+.benefits-img,
+.science-img {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* HEADER LOGO - Replace text with image */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo::before {
+  content: '';
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  background-image: url('../images/logo.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.nav-logo-text {
+  display: none;
+}
+
+/* FOOTER LOGO - Replace text with image */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand::before {
+  content: '';
+  display: inline-block;
+  width: 160px;
+  height: 48px;
+  background-image: url('../images/logo.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-text {
+  display: none;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+  /* Hero padding to avoid header overlap */
+  #hero {
+    padding-top: 90px !important;
+  }
+  
+  /* Ensure hero image has border-radius on mobile */
+  .hero-img-col img,
+  .hero-product-img {
+    border-radius: 24px !important;
+    overflow: hidden;
+  }
+  
+  /* Add margin to hero image container */
+  .hero-img-col {
+    margin-top: 2rem;
+  }
+  
+  /* Ensure header stays on top */
+  #header {
+    z-index: 1000;
+  }
+  
+  /* Hero inner z-index adjustment */
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+}
